@@ -64,7 +64,7 @@ class AMS:
         print("Your Date of Birth: ", self.dob)
         print("Your Mobile Number: ", self.mobno)
         print("Your Gmail: ", self.gmail)
-        print("Your Password: ", self.pawd )
+        print("Your Password: ", self.pawd)
         print("----------- ***************** --------------")
 
     # Main Function
