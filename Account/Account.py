@@ -91,7 +91,6 @@ class AMS:
                 self.account_profile()
             elif user_choice == 5:
                 print("----- BYE ! BYE ! ------")
-                print("Sample")
                 quit()
 
 
