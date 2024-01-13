@@ -47,7 +47,7 @@ class AMS:
         print("----------- ***************** --------------")
         a = input("Enter your G-mail ID: ")
         if a == self.gmail:
-            user_input = int(input("Please enter 1 to enter the Inbox"))
+            user_input = int(input("Please enter 1 to enter the Inbox: "))
             while user_input != 1:
                 print("-- press one for enter in to the Inbox --")
                 user_input = int(input("Please enter 1 to enter the Inbox: "))
