@@ -1,3 +1,4 @@
+import random as R
 class AMS:
     def __init__(self):
         # Created some initiators for the system
@@ -43,19 +44,44 @@ class AMS:
 
     # Change Password
     def change_password(self):
+        print("----------- ***************** --------------")
         a = input("Enter your G-mail ID: ")
         if a == self.gmail:
-            p = input("Reset Password: ")
-            while len(p) < 8:
-                print("Password length must be above eight characters")
-                p = input("Reset Password: ")
-            self.pawd = input("Confirm Password: ")
-            while self.pawd != p:
-                print("--- Password not matched ! please enter it correctly ---")
-                self.pawd = input("Confirm Password: ")
-            print("Password Changed successfully")
+            user_input = int(input("Please enter 1 to enter the Inbox"))
+            while user_input != 1:
+                print("-- press one for enter in to the Inbox --")
+                user_input = int(input("Please enter 1 to enter the Inbox: "))
+            if user_input == 1:
+                self.inbox()
+                print("Plese enter your code for change the password")
+                q = int(input("Enter your Code here: "))
+                while q != self.code:
+                    print("--- ! OOPS your code didn't matched, please enter it correctly ----")
+                    q = int(input("Enter your Code here: "))
+                if q == self.code:
+                    p = input("Reset Password: ")
+                    while len(p) < 8:
+                        print("Password length must be above eight characters")
+                        p = input("Reset Password: ")
+                    self.pawd = input("Confirm Password: ")
+                    while self.pawd != p:
+                        print("--- Password not matched ! please enter it correctly ---")
+                        self.pawd = input("Confirm Password: ")
+                    print("Password Changed successfully")
+                    print("----------- ***************** --------------")
         else:
             print("-- Please enter a Valid G-Mail ID --")
+            print("----------- ***************** --------------")
+
+    # Inbox for Change Password
+    def inbox(self):
+        print("----------- ***************** --------------")
+        print("-------------- Inbox ----------------")
+        print("------ ** Received New Message ** ------")
+        c = R.randint(2356, 6658)
+        self.code = c
+        print("Your code for password change: ",self.code)
+        print("----------- ***************** --------------")
 
     # Account Profile
     def account_profile(self):
@@ -69,13 +95,16 @@ class AMS:
 
     # Main Function
     def main(self):
-        msg = ("1. Account Creation \n"
+        msg = ("----------- ************* ------------- \n"
+               "1. Account Creation \n"
                "2. Log-in \n"
                "3. Change Password \n"
                "4. Account Profile \n"
-               "5. Exit \n")
+               "5. Exit \n"
+               "------------ ************* ------------- \n")
         print(msg)
         while True:
+            print(msg)
             user_choice = int(input("Enter Your Request: "))
             while user_choice not in [1, 2, 3, 4, 5]:
                 print("---- ! OOPS Invalid Request ----")
@@ -91,7 +120,6 @@ class AMS:
                 self.account_profile()
             elif user_choice == 5:
                 print("----- BYE ! BYE ! ------")
-                print("Sample")
                 quit()
 
 
